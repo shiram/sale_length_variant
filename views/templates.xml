@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright 2019 Coop IT Easy
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <template id="report_quotation_inherit_add_length" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//table[@class='table table-sm o_main_table']//thead//tr/th[@name='th_quantity']" position="after">
+            <th name="th_length" class="text-right">Length</th>
+        </xpath>
+
+        <xpath expr="//td[@name='td_quantity']" position="after">
+            <td name="td_length" class="text-right">
+                <span t-field="line.length"/>
+            </td>
+        </xpath>
+    </template>
+</odoo>
